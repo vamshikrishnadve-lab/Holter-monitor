@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>CardioVision Pro | Enterprise Holter Monitoring System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Premium Cursor Effect -->
+        <div class="cursor-glow"></div>
+        <div class="cursor-dot"></div>
+
+        <!-- Animated Background -->
+        <div class="animated-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+
+        <!-- Premium Navigation -->
+        <nav class="premium-nav">
+            <div class="nav-blur"></div>
+            <div class="nav-content">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <i class="fas fa-heart-pulse"></i>
+                        <div class="pulse-ring"></div>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">CardioVision</span>
+                        <span class="logo-badge">PRO</span>
+                    </div>
+                </div>
+
+                <div class="nav-menu">
+                    <a href="#dashboard" class="nav-item active" data-page="dashboard">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Live Monitor</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                    <a href="#patients" class="nav-item" data-page="patients">
+                        <i class="fas fa-users"></i>
+                        <span>Patients</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                    <a href="#recordings" class="nav-item" data-page="recordings">
+                        <i class="fas fa-database"></i>
+                        <span>Data Vault</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                    <a href="#analysis" class="nav-item" data-page="analysis">
+                        <i class="fas fa-brain"></i>
+                        <span>AI Analysis</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                    <a href="#reports" class="nav-item" data-page="reports">
+                        <i class="fas fa-file-medical"></i>
+                        <span>Reports</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                    <a href="#settings" class="nav-item" data-page="settings">
+                        <i class="fas fa-sliders-h"></i>
+                        <span>Config</span>
+                        <div class="nav-indicator"></div>
+                    </a>
+                </div>
+
+                <div class="nav-actions">
+                    <div class="connection-status-premium">
+                        <div class="connection-dot"></div>
+                        <span class="connection-text">Real-time</span>
+                    </div>
+                    <div class="user-profile-premium">
+                        <img src="https://ui-avatars.com/api/?name=Dr+Smith&background=6366F1&color=fff&bold=true&length=2" alt="Profile">
+                        <div class="user-online"></div>
+                    </div>
+                    <button class="premium-btn-icon" id="settingsBtn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="premium-main">
+            <!-- Dashboard Page -->
+            <div id="dashboardPage" class="page active">
+                <!-- Hero Section Premium -->
+                <div class="hero-premium">
+                    <div class="hero-glow"></div>
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1 class="hero-title">
+                                <span class="title-gradient">Real-Time Cardiac Intelligence</span>
+                                <span class="hero-tag">LIVE</span>
+                            </h1>
+                            <p class="hero-description">Advanced multi-lead monitoring with AI-powered arrhythmia detection</p>
+                        </div>
+                        <div class="hero-stats-premium">
+                            <div class="stat-card-premium">
+                                <div class="stat-icon">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value" id="activeLeadsCount">12</span>
+                                    <span class="stat-label">Active Leads</span>
+                                </div>
+                            </div>
+                            <div class="stat-card-premium">
+                                <div class="stat-icon">
+                                    <i class="fas fa-signal"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value" id="signalQuality">98<span class="stat-unit">%</span></span>
+                                    <span class="stat-label">Signal Quality</span>
+                                </div>
+                            </div>
+                            <div class="stat-card-premium">
+                                <div class="stat-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <span class="stat-value" id="monitoringTime">24<span class="stat-unit">h</span></span>
+                                    <span class="stat-label">Monitoring</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Connection Panel Premium -->
+                <div class="connection-panel-premium">
+                    <div class="panel-header">
+                        <i class="fas fa-plug"></i>
+                        <span>Data Source Integration</span>
+                    </div>
+                    <div class="connection-options-premium">
+                        <button class="conn-option" data-conn="usb">
+                            <i class="fas fa-usb"></i>
+                            <span>USB 3.0</span>
+                            <div class="conn-status"></div>
+                        </button>
+                        <button class="conn-option" data-conn="wifi">
+                            <i class="fas fa-wifi"></i>
+                            <span>WiFi 6E</span>
+                            <div class="conn-status"></div>
+                        </button>
+                        <button class="conn-option active" data-conn="bluetooth">
+                            <i class="fab fa-bluetooth-b"></i>
+                            <span>Bluetooth 5.3</span>
+                            <div class="conn-status active"></div>
+                        </button>
+                        <button class="conn-option" data-conn="cellular">
+                            <i class="fas fa-tower-cell"></i>
+                            <span>5G Cellular</span>
+                            <div class="conn-status"></div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ECG Waveforms Premium -->
+                <div class="waveforms-premium">
+                    <div class="waveforms-header">
+                        <div class="header-left">
+                            <i class="fas fa-waveform"></i>
+                            <h3>Multi-Lead Visualization</h3>
+                            <span class="lead-badge">12-Lead ECG</span>
+                        </div>
+                        <div class="header-right">
+                            <button class="view-toggle" id="gridViewBtn">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-toggle" id="listViewBtn">
+                                <i class="fas fa-list"></i>
+                            </button>
+                            <div class="lead-selector">
+                                <button class="lead-selector-btn" id="leadSelectorBtn">
+                                    <i class="fas fa-chart-simple"></i>
+                                    <span>Select Leads</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="lead-dropdown" id="leadDropdown">
+                                    <!-- Lead options will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="waveforms-grid-premium" id="waveformsGrid">
+                        <!-- ECG canvases will be dynamically inserted -->
+                    </div>
+                </div>
+
+                <!-- AI Alerts Panel -->
+                <div class="ai-alerts-panel">
+                    <div class="panel-header-premium">
+                        <div class="header-title">
+                            <i class="fas fa-robot"></i>
+                            <h3>AI-Powered Event Detection</h3>
+                            <span class="ai-badge">Deep Learning</span>
+                        </div>
+                        <div class="alert-filters">
+                            <button class="alert-filter active" data-filter="all">All</button>
+                            <button class="alert-filter" data-filter="critical">Critical</button>
+                            <button class="alert-filter" data-filter="warning">Warning</button>
+                            <button class="alert-filter" data-filter="info">Info</button>
+                        </div>
+                    </div>
+                    <div class="alerts-container" id="alertsContainer">
+                        <div class="alert-card info">
+                            <div class="alert-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="alert-content">
+                                <div class="alert-title">System Ready</div>
+                                <div class="alert-message">Monitoring initialized successfully</div>
+                            </div>
+                            <div class="alert-time">Just now</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patient Context Bar -->
+                <div class="patient-context-bar">
+                    <div class="context-item">
+                        <i class="fas fa-user-md"></i>
+                        <span>Dr. Sarah Johnson</span>
+                    </div>
+                    <div class="context-divider"></div>
+                    <div class="context-item">
+                        <i class="fas fa-hospital-user"></i>
+                        <span id="currentPatient">Michael Chen (ID: MC-7842)</span>
+                    </div>
+                    <div class="context-divider"></div>
+                    <div class="context-item">
+                        <i class="fas fa-calendar"></i>
+                        <span id="sessionDate">March 15, 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Patients Page -->
+            <div id="patientsPage" class="page">
+                <div class="page-header-premium">
+                    <h2><i class="fas fa-users"></i> Patient Management</h2>
+                    <button class="premium-btn-primary" id="addPatientBtn">
+                        <i class="fas fa-plus"></i>
+                        <span>New Patient</span>
+                    </button>
+                </div>
+                <div class="patients-grid" id="patientsGrid">
+                    <!-- Patient cards will be populated -->
+                </div>
+            </div>
+
+            <!-- Recordings Page -->
+            <div id="recordingsPage" class="page">
+                <div class="page-header-premium">
+                    <h2><i class="fas fa-database"></i> Data Vault</h2>
+                    <div class="header-actions">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search recordings..." id="searchRecordings">
+                        </div>
+                        <button class="premium-btn-secondary" id="exportAllBtn">
+                            <i class="fas fa-download"></i>
+                            <span>Export All</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="recordings-table-container">
+                    <table class="recordings-table" id="recordingsTable">
+                        <thead>
+                            <tr>
+                                <th>Date & Time</th>
+                                <th>Patient</th>
+                                <th>Duration</th>
+                                <th>Events</th>
+                                <th>Size</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recordingsTableBody">
+                            <!-- Recording rows will be populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Analysis Page -->
+            <div id="analysisPage" class="page">
+                <div class="page-header-premium">
+                    <h2><i class="fas fa-chart-pie"></i> AI Clinical Analysis</h2>
+                    <button class="premium-btn-primary" id="runAnalysisBtn">
+                        <i class="fas fa-play"></i>
+                        <span>Deep Analysis</span>
+                    </button>
+                </div>
+                <div class="analysis-dashboard">
+                    <div class="analysis-grid">
+                        <div class="analysis-card-large">
+                            <div class="card-header">
+                                <h3>Arrhythmia Distribution</h3>
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <canvas id="arrhythmiaPieChart"></canvas>
+                        </div>
+                        <div class="analysis-card">
+                            <div class="card-header">
+                                <h3>Trend Analysis</h3>
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <canvas id="trendChart"></canvas>
+                        </div>
+                        <div class="analysis-card">
+                            <div class="card-header">
+                                <h3>Risk Score</h3>
+                                <i class="fas fa-chart-simple"></i>
+                            </div>
+                            <div class="risk-meter">
+                                <div class="risk-value" id="riskScore">78</div>
+                                <div class="risk-label">Moderate Risk</div>
+                                <div class="risk-bar">
+                                    <div class="risk-fill" style="width: 78%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="analysis-card">
+                            <div class="card-header">
+                                <h3>AI Insights</h3>
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div class="insights-list" id="insightsList">
+                                <div class="insight-item">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Increased PVC frequency in last 6 hours</span>
+                                </div>
+                                <div class="insight-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Circadian pattern detected: Peak at 6 AM</span>
+                                </div>
+                                <div class="insight-item">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Heart rate variability: Normal range</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reports Page -->
+            <div id="reportsPage" class="page">
+                <div class="page-header-premium">
+                    <h2><i class="fas fa-file-alt"></i> Clinical Reports</h2>
+                    <button class="premium-btn-primary" id="generateReportBtn">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Generate Report</span>
+                    </button>
+                </div>
+                <div class="report-builder">
+                    <div class="report-sidebar">
+                        <div class="report-config-panel">
+                            <h3>Report Configuration</h3>
+                            <div class="config-field">
+                                <label>Patient</label>
+                                <select id="reportPatientSelect" class="premium-select">
+                                    <option>Select patient</option>
+                                </select>
+                            </div>
+                            <div class="config-field">
+                                <label>Date Range</label>
+                                <div class="date-range">
+                                    <input type="date" id="reportStart" class="premium-input">
+                                    <span>to</span>
+                                    <input type="date" id="reportEnd" class="premium-input">
+                                </div>
+                            </div>
+                            <div class="config-field">
+                                <label>Report Template</label>
+                                <select id="reportTemplate" class="premium-select">
+                                    <option value="standard">Standard Clinical</option>
+                                    <option value="detailed">Detailed Analysis</option>
+                                    <option value="executive">Executive Summary</option>
+                                </select>
+                            </div>
+                            <div class="config-field">
+                                <label>Include Sections</label>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" checked> ECG Strips</label>
+                                    <label><input type="checkbox" checked> Event Summary</label>
+                                    <label><input type="checkbox" checked> Trend Graphs</label>
+                                    <label><input type="checkbox"> Raw Data</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="report-preview" id="reportPreview">
+                        <div class="preview-placeholder">
+                            <i class="fas fa-file-alt"></i>
+                            <p>Configure and generate report</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Page -->
+            <div id="settingsPage" class="page">
+                <div class="page-header-premium">
+                    <h2><i class="fas fa-cog"></i> System Configuration</h2>
+                </div>
+                <div class="settings-grid">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-microscope"></i> Device Settings</h3>
+                        <div class="setting-item">
+                            <label>Channel Configuration</label>
+                            <select id="deviceChannels" class="premium-select">
+                                <option value="12">12 Leads (Full)</option>
+                                <option value="6">6 Leads</option>
+                                <option value="3">3 Leads</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label>Sampling Rate</label>
+                            <select id="samplingRate" class="premium-select">
+                                <option value="250">250 Hz</option>
+                                <option value="500">500 Hz (Standard)</option>
+                                <option value="1000">1000 Hz (High Resolution)</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label>Filter Mode</label>
+                            <select id="filterMode" class="premium-select">
+                                <option value="adaptive">Adaptive Filter</option>
+                                <option value="bandpass">Bandpass Filter</option>
+                                <option value="notch">Notch Filter</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="settings-card">
+                        <h3><i class="fas fa-user"></i> Patient Defaults</h3>
+                        <div class="setting-item">
+                            <label>Default Patient Name</label>
+                            <input type="text" id="defaultPatientName" class="premium-input" placeholder="Enter name">
+                        </div>
+                        <div class="setting-item">
+                            <label>Default Contact</label>
+                            <input type="tel" id="defaultContact" class="premium-input" placeholder="+1 234 567 8900">
+                        </div>
+                        <div class="setting-item">
+                            <label>Default Physician</label>
+                            <input type="text" id="defaultPhysician" class="premium-input" placeholder="Referring doctor">
+                        </div>
+                    </div>
+                    <div class="settings-card">
+                        <h3><i class="fas fa-chart-line"></i> Alert Thresholds</h3>
+                        <div class="setting-item">
+                            <label>Heart Rate (Min/Max)</label>
+                            <div class="range-input">
+                                <input type="number" id="hrMin" value="40" class="premium-input-small">
+                                <span>-</span>
+                                <input type="number" id="hrMax" value="120" class="premium-input-small">
+                                <span>BPM</span>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <label>PVC Threshold</label>
+                            <input type="range" id="pvcThreshold" min="0" max="100" value="10" class="premium-range">
+                            <span id="pvcThresholdValue">10</span><span>/hour</span>
+                        </div>
+                        <div class="setting-item">
+                            <label>AFib Detection Sensitivity</label>
+                            <select id="afibSensitivity" class="premium-select">
+                                <option value="high">High</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="settings-actions">
+                    <button class="premium-btn-primary" id="saveAllSettings">Save Configuration</button>
+                    <button class="premium-btn-secondary" id="resetSettings">Reset to Default</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Premium Footer -->
+        <footer class="premium-footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>HIPAA Compliant | ISO 13485 Certified</span>
+                </div>
+                <div class="footer-stats">
+                    <span><i class="fas fa-chart-line"></i> 1,234 patients monitored today</span>
+                    <span><i class="fas fa-cloud-upload-alt"></i> Cloud sync active</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
